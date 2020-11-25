@@ -13,7 +13,7 @@ public class Server extends Thread {
     private boolean alive;
 
     public Server() throws SocketException {
-        socket = new DatagramSocket(5556);
+        socket = new DatagramSocket(5555);
     }
 
     public void run() {
