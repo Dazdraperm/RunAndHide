@@ -35,7 +35,6 @@ public class WindowStart {
 
                 try {
                     client = new Client(name);
-                    System.out.println(client);
                     goServer.getScene().getWindow().hide();
 
                     WaitGame waitGame = new WaitGame(client);

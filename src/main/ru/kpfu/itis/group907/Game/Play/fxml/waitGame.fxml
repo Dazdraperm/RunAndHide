@@ -19,7 +19,7 @@
                     </font>
                 </Label>
                 <Button fx:id="buttonReady" layoutX="110.0" layoutY="186.0" mnemonicParsing="false" text="Ready"/>
-                <ComboBox fx:id="boxColor" layoutX="60.0" layoutY="94.0" prefWidth="150.0" promptText="Color"/>
+                <ComboBox fx:id="boxPersonage" layoutX="60.0" layoutY="94.0" prefWidth="150.0" promptText="Personage"/>
                 <Label layoutX="86.0" layoutY="150.0" text="Готовы:">
                     <font>
                         <Font name="System Italic" size="14.0"/>
