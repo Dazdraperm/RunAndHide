@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 
-<?import javafx.scene.Group?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
-            prefWidth="1000.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.221"
-            xmlns:fx="http://javafx.com/fxml/1">
+            prefWidth="1000.0" style="-fx-background-color: #000000;" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.261">
     <children>
-        <AnchorPane fx:id="back" prefHeight="720.0" prefWidth="1000.0" style="-fx-background-color: #000000;"/>
-
         <AnchorPane prefHeight="33.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;">
             <children>
                 <Label layoutX="464.0" layoutY="8.0" text="Count lives:"/>
@@ -20,49 +19,105 @@
                 <Label fx:id="countLives" layoutX="525.0" layoutY="8.0"/>
             </children>
         </AnchorPane>
-        <Group fx:id="map">
-            <AnchorPane layoutX="960.0" layoutY="346.0" prefHeight="370.0" prefWidth="40.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="1" layoutX="590.0" layoutY="346.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="2" layoutX="385.0" layoutY="181.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="3" layoutX="385.0" layoutY="511.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="4" layoutX="755.0" layoutY="181.0" prefHeight="370.0" prefWidth="40.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="5" layoutX="365.0" layoutY="346.0" prefHeight="370.0" prefWidth="40.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="6" layoutX="200.0" layoutY="346.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="7" layoutX="200.0" layoutY="181.0" prefHeight="370.0" prefWidth="40.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="8" layoutX="200.0" layoutY="181.0" prefHeight="40.0" prefWidth="185.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="9" layoutX="35.0" layoutY="676.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="10" layoutX="35.0" layoutY="346.0" prefHeight="370.0" prefWidth="40.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="11" layoutX="35.0" layoutY="36.0" prefHeight="370.0" prefWidth="40.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="12" layoutX="75.0" layoutY="36.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="13" layoutX="445.0" layoutY="36.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="14" layoutX="630.0" layoutY="36.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="15" layoutX="365.0" layoutY="36.0" prefHeight="370.0" prefWidth="40.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="16" layoutX="405.0" layoutY="676.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="17" layoutX="55.0" layoutY="346.0" prefHeight="40.0" prefWidth="185.0"
-                        style="-fx-background-color: #292838;"/>
-            <AnchorPane fx:id="18" layoutX="630.0" layoutY="676.0" prefHeight="40.0" prefWidth="370.0"
-                        style="-fx-background-color: #292838;"/>
-            <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="350.0" layoutY="60.0" radius="14.0" stroke="BLACK"
+
+        <Group fx:id="map" layoutX="-1.0" layoutY="-8.0">
+            <Rectangle fx:id="1" fill="#111017" height="40.0" layoutX="370.0" layoutY="289.0" width="55.0"/>
+            <Rectangle fx:id="2" fill="#111017" height="40.0" layoutX="465.0" layoutY="289.0" width="117.0"/>
+            <Rectangle fx:id="3" fill="#111017" height="40.0" layoutX="582.0" layoutY="289.0" width="113.0"/>
+            <Rectangle fx:id="4" fill="#111017" height="40.0" layoutX="695.0" layoutY="289.0" width="100.0"/>
+            <Rectangle fx:id="5" fill="#111017" height="122.0" layoutX="795.0" layoutY="328.0" width="40.0"/>
+            <Rectangle fx:id="6" fill="#111017" height="51.0" layoutX="795.0" layoutY="122.0" width="40.0"/>
+            <Rectangle fx:id="7" fill="#111017" height="78.0" layoutX="795.0" layoutY="212.0" width="40.0"/>
+            <Rectangle fx:id="8" fill="#111017" height="40.0" layoutX="690.0" layoutY="450.0" width="55.0"/>
+            <Rectangle fx:id="9" fill="#111017" height="40.0" layoutX="465.0" layoutY="450.0" width="83.0"/>
+            <Rectangle fx:id="10" fill="#111017" height="40.0" layoutX="745.0" layoutY="450.0" width="50.0"/>
+            <Rectangle fx:id="11" fill="#111017" height="40.0" layoutX="548.0" layoutY="450.0" width="102.0"/>
+            <Rectangle fx:id="12" fill="#111017" height="122.0" layoutX="530.0" layoutY="328.0" width="40.0"/>
+            <Rectangle fx:id="myVisionRectangle" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0"
+                       layoutX="475.0" layoutY="314.0" stroke="BLACK" strokeType="INSIDE" width="150.0"/>
+            <Rectangle fill="#111017" height="85.0" layoutX="425.0" layoutY="329.0" width="40.0"/>
+            <Rectangle fill="#111017" height="47.0" layoutX="425.0" layoutY="490.0" width="40.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="690.0" layoutY="537.0" width="50.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="548.0" layoutY="537.0" width="102.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="465.0" layoutY="537.0" width="83.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="740.0" layoutY="537.0" width="90.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="685.0" layoutY="173.0" width="110.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="583.0" layoutY="173.0" width="102.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="489.0" layoutY="173.0" width="94.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="425.0" layoutY="173.0" width="70.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="626.0" layoutY="82.0" width="81.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="553.0" layoutY="82.0" width="73.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="484.0" layoutY="82.0" width="70.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="425.0" layoutY="82.0" width="59.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="265.0" layoutY="82.0" width="120.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="159.0" layoutY="82.0" width="106.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="55.0" layoutY="82.0" width="104.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="707.0" layoutY="82.0" width="88.0"/>
+            <Rectangle fill="#111017" height="52.0" layoutX="385.0" layoutY="121.0" width="40.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="327.0" layoutY="537.0" width="98.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="227.0" layoutY="537.0" width="100.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="138.0" layoutY="537.0" width="89.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="55.0" layoutY="537.0" width="83.0"/>
+            <Rectangle fill="#111017" height="85.0" layoutX="15.0" layoutY="329.0" width="40.0"/>
+            <Rectangle fill="#111017" height="72.0" layoutX="15.0" layoutY="217.0" width="40.0"/>
+            <Rectangle fill="#111017" height="55.0" layoutX="15.0" layoutY="122.0" width="40.0"/>
+            <Rectangle fill="#111017" height="84.0" layoutX="15.0" layoutY="453.0" width="40.0"/>
+            <Rectangle fill="#111017" height="72.0" layoutX="330.0" layoutY="217.0" width="40.0"/>
+            <Rectangle fill="#111017" height="85.0" layoutX="330.0" layoutY="329.0" width="40.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="205.0" layoutY="177.0" width="125.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="55.0" layoutY="177.0" width="150.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="189.0" layoutY="289.0" width="141.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="55.0" layoutY="289.0" width="134.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="370.0" layoutY="414.0" width="55.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="178.0" layoutY="414.0" width="152.0"/>
+            <Rectangle fill="#111017" height="40.0" layoutX="55.0" layoutY="414.0" width="123.0"/>
+            <Rectangle fill="#111017" height="51.0" layoutX="650.0" layoutY="489.0" width="40.0"/>
+
+            <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="550.0" layoutY="389.0" radius="14.0" stroke="BLACK"
                     strokeType="INSIDE"/>
-            <Circle fx:id="enemyCircle" fill="#ff251f" layoutX="60.0" layoutY="25.0" radius="14.0" stroke="BLACK"
+            <Circle fx:id="enemyCircle" fill="#ff251f" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
                     strokeType="INSIDE"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="425.0" layoutY="537.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="15.0" layoutY="414.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="15.0" layoutY="289.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="15.0" layoutY="177.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="330.0" layoutY="177.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="330.0" layoutY="289.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="425.0" layoutY="289.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="425.0" layoutY="414.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="425.0" layoutY="450.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="650.0" layoutY="450.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="795.0" layoutY="450.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="795.0" layoutY="289.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="795.0" layoutY="173.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="385.0" layoutY="173.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="795.0" layoutY="82.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="15.0" layoutY="537.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="330.0" layoutY="414.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="650.0" layoutY="537.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="385.0" layoutY="82.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="15.0" layoutY="82.0"
+                       stroke="#111017" strokeType="INSIDE" width="40.0"/>
+
         </Group>
     </children>
 </AnchorPane>
