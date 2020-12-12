@@ -1,5 +1,7 @@
 package kpfu.itis.group907.Game.Server.udp;
 
+import kpfu.itis.group907.Game.Server.udp.Client.Client;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,12 +15,12 @@ public class TestClient {
         Client client = new Client(name);
 
         System.out.println(client);
-        String response = client.sendMessage("hello");
-        System.out.println(response);
-        while (true) {
-            response = client.sendMessage(in.next());
-            System.out.println(response);
-        }
+//        String response = client.sendMessage("hello");
+//        System.out.println(response);
+//        while (true) {
+//            response = client.sendMessage(in.next());
+//            System.out.println(response);
+
 
     }
 }

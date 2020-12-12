@@ -6,10 +6,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import kpfu.itis.group907.Game.Server.udp.Client;
+import kpfu.itis.group907.Game.Server.udp.Client.Client;
+import kpfu.itis.group907.Game.Server.udp.Server.Server;
 
 import java.io.IOException;
 
@@ -36,6 +36,7 @@ public class WaitGame {
     @FXML
     void initialize() {
         labelNick.setText(client.getName());
+        client.sendMessage("sosi");
         countReady.setText("1/10");
         buttonReady.setOnAction(event -> {
 

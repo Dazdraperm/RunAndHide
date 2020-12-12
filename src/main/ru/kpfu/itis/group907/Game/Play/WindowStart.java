@@ -2,17 +2,14 @@ package kpfu.itis.group907.Game.Play;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import kpfu.itis.group907.Game.Server.udp.Client;
+import kpfu.itis.group907.Game.Server.udp.Client.Client;
 
 import java.io.IOException;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 
 public class WindowStart {
 
@@ -35,6 +32,7 @@ public class WindowStart {
 
                 try {
                     client = new Client(name);
+                    client.start();
                     goServer.getScene().getWindow().hide();
 
                     WaitGame waitGame = new WaitGame(client);
