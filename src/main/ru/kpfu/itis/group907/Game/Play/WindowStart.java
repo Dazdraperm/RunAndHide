@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import kpfu.itis.group907.Game.Play.readyGame.WaitGame;
 import kpfu.itis.group907.Game.Server.udp.Client.Client;
 
 import java.io.IOException;
@@ -31,19 +32,22 @@ public class WindowStart {
             if (!nameFiled.getText().equals("")) {
 
                 try {
-                    client = new Client(name);
-                    client.start();
+
                     goServer.getScene().getWindow().hide();
 
-                    WaitGame waitGame = new WaitGame(client);
+
+                    WaitGame waitGame = new WaitGame();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/waitGame.fxml"));
 
                     loader.setController(waitGame);
+
                     Pane mainPane = loader.load();
 
                     Scene scene = new Scene(mainPane, 1000, 720);
                     Stage stage = new Stage();
                     stage.setScene(scene);
+                    client = new Client(name, waitGame);
+                    client.start();
                     stage.showAndWait();
 
                 } catch (IOException e) {

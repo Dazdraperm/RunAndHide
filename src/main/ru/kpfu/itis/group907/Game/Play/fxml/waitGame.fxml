@@ -18,14 +18,16 @@
                         <Font name="System Italic" size="18.0"/>
                     </font>
                 </Label>
-                <Button fx:id="buttonReady" layoutX="110.0" layoutY="186.0" mnemonicParsing="false" text="Ready"/>
+                <Button fx:id="buttonReady" layoutX="110.0" layoutY="186.0" mnemonicParsing="false" text="Not ready"/>
+                <Label fx:id="timer" layoutX="110.0" layoutY="200.0" visible="false"/>
+
                 <ComboBox fx:id="boxPersonage" layoutX="60.0" layoutY="94.0" prefWidth="150.0" promptText="Personage"/>
                 <Label layoutX="86.0" layoutY="150.0" text="Готовы:">
                     <font>
                         <Font name="System Italic" size="14.0"/>
                     </font>
                 </Label>
-                <Label fx:id="countReady" layoutX="147.0" layoutY="152.0" text="0/10"/>
+                <Label fx:id="countReady" layoutX="147.0" layoutY="152.0" text="0/6"/>
                 <Label layoutX="80.0" layoutY="130.0" text="Никнейм:">
                     <font>
                         <Font name="System Italic" size="14.0"/>

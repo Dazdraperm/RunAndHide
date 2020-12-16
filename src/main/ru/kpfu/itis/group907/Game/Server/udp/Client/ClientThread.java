@@ -1,5 +1,6 @@
 package kpfu.itis.group907.Game.Server.udp.Client;
 
+import javafx.application.Platform;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,13 +25,13 @@ public class ClientThread implements Runnable {
     public BufferedWriter getOutput() {
         return output;
     }
-
     @Override
     public void run() {
         try {
             while (true) {
-                String message = input.readLine();
-//                client.getApplication().appendMessageToChat(message);
+                String respCountReady = input.readLine();
+//                client.getWaitGame().setCountReady(respCountReady);
+                client.setCountReady(respCountReady);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,3 +39,4 @@ public class ClientThread implements Runnable {
 
     }
 }
+

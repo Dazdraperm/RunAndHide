@@ -12,9 +12,9 @@ public class TestClient {
         while (name.equals("")) {
             name = in.next();
         }
-        Client client = new Client(name);
+//        Client client = new Client(name);
 
-        System.out.println(client);
+//        System.out.println(client);
 //        String response = client.sendMessage("hello");
 //        System.out.println(response);
 //        while (true) {
