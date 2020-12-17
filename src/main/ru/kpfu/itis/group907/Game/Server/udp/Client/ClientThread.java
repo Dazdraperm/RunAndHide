@@ -32,6 +32,15 @@ public class ClientThread implements Runnable {
                 String respCountReady = input.readLine();
 //                client.getWaitGame().setCountReady(respCountReady);
                 client.setCountReady(respCountReady);
+                if (respCountReady != null && !respCountReady.equals("")) {
+
+                    String[] countReadyArray = respCountReady.split("/");
+                    int capacity = Integer.parseInt(countReadyArray[1]);
+                    int ready = Integer.parseInt(countReadyArray[0]);
+
+                    if (ready == capacity) client.getWaitGame().timerDo();
+
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();

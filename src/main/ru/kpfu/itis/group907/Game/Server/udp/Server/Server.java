@@ -20,7 +20,7 @@ public class Server {
         return serverSize;
     }
 
-    private final int serverSize = 1;
+    private final int serverSize = 2;
     ClientThread clientThread;
 
     public void addReadyClients(ClientThread clientThread) {

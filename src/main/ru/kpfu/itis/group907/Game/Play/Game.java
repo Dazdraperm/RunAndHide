@@ -14,10 +14,10 @@ import java.util.ArrayList;
 public class Game {
     private Client client;
 
-    public Game(Client client) {
-        this.client = client;
-
-    }
+//    public Game(Client client) {
+//        this.client = client;
+//
+//    }
 
 
     private ArrayList<Rectangle> allRectangle = new ArrayList<>();
@@ -46,7 +46,11 @@ public class Game {
     //    Основной метод
     @FXML
     void initialize() {
-        countLives.setText("10");
+
+
+        countLives.setText("6");
+
+
         setAllRectangle();
 //        paintInBlackAllRectangle();
         setSpawnCoordinate();
@@ -59,7 +63,9 @@ public class Game {
             }
         }));
 
+
     }
+
 
     private void paintInBlackAllRectangle() {
         for (Rectangle rectangle : allRectangle) {

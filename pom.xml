@@ -18,6 +18,14 @@
                 </configuration>
             </plugin>
         </plugins>
+        <!--        <resources>-->
+        <!--            <resource>-->
+        <!--                <directory>src/main/ru/kpfu/itis/group907/Game/</directory>-->
+        <!--                <includes>-->
+        <!--                    <include>**/*.fxml</include>-->
+        <!--                </includes>-->
+        <!--            </resource>-->
+        <!--        </resources>-->
     </build>
 
 
