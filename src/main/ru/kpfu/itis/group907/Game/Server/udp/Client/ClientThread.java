@@ -5,6 +5,8 @@ import javafx.application.Platform;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ClientThread implements Runnable {
 
@@ -29,18 +31,34 @@ public class ClientThread implements Runnable {
     public void run() {
         try {
             while (true) {
-                String respCountReady = input.readLine();
-//                client.getWaitGame().setCountReady(respCountReady);
-                client.setCountReady(respCountReady);
-                if (respCountReady != null && !respCountReady.equals("")) {
 
-                    String[] countReadyArray = respCountReady.split("/");
-                    int capacity = Integer.parseInt(countReadyArray[1]);
-                    int ready = Integer.parseInt(countReadyArray[0]);
+                String response = input.readLine();
+                if (response != null) {
 
-                    if (ready == capacity) client.getWaitGame().timerDo();
+                    String[] resp = response.split(" ");
 
+                    ArrayList<String> infoAboutPlayer = new ArrayList<>();
+                    Collections.addAll(infoAboutPlayer, resp);
+
+                    if (resp[0].equals("position")) {
+                        client.setInfoPlayer(infoAboutPlayer);
+                    } else {
+
+                        client.setCountReady(resp[0]);
+
+                        if (!resp[0].equals("")) {
+
+                            String[] countReadyArray = resp[0].split("/");
+                            int capacity = Integer.parseInt(countReadyArray[1]);
+                            int ready = Integer.parseInt(countReadyArray[0]);
+
+                            if (ready == capacity) client.getWaitGame().timerDo();
+
+                        }
+                    }
                 }
+
+
             }
         } catch (IOException e) {
             e.printStackTrace();

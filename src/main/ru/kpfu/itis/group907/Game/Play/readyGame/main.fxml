@@ -117,7 +117,16 @@
 
             <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="550.0" layoutY="389.0" radius="14.0" stroke="BLACK"
                     strokeType="INSIDE"/>
-            <Circle fx:id="enemyCircle" fill="#ff251f" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
+            <Circle fx:id="enemyCircle1" fill="#ff251f" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
+                    strokeType="INSIDE"/>
+            <Circle fx:id="allyCircle" fill="DODGERBLUE" layoutX="550.0" layoutY="389.0" radius="14.0" stroke="BLACK"
+                    strokeType="INSIDE"/>
+            <Circle fx:id="enemyCircle2" fill="#ff251f" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
+                    strokeType="INSIDE"/>
+            <Circle fx:id="notAllyCircle1" fill="DODGERBLUE" layoutX="550.0" layoutY="389.0" radius="14.0"
+                    stroke="BLACK"
+                    strokeType="INSIDE"/>
+            <Circle fx:id="notAllyCircle2" fill="#ff251f" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
                     strokeType="INSIDE"/>
             <Rectangle fx:id="myVisionRectangle" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0"
                        layoutX="475.0" layoutY="314.0" width="150.0"/>

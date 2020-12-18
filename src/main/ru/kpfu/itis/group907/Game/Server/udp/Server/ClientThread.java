@@ -17,6 +17,9 @@ public class ClientThread implements Runnable {
     private ArrayList<ClientThread> ready;
     boolean checkCountReady = true;
 
+
+    private String nameTeam = "";
+
     public ClientThread(BufferedReader input, BufferedWriter output, Server server) {
         this.input = input;
         this.output = output;
@@ -29,18 +32,13 @@ public class ClientThread implements Runnable {
         try {
             while (true) {
                 methodCheckCountReady();
-                String inputLine = input.readLine();
+                String[] inputLine = input.readLine().split(" ");
                 if (checkCountReady) {
-                    if (inputLine.equals("ready")) {
-                        server.addReadyClients(this);
-                        server.sendInfoAboutReadyPlayer();
-
-                    } else if (inputLine.equals("notReady")) {
-                        server.removeReadyClients(this);
-                        server.sendInfoAboutReadyPlayer();
-                    } else {
-                        server.sendInfoAboutReadyPlayer();
-                    }
+                    addOrDeleteReady(inputLine[0]);
+                }
+                if (inputLine[0].equals("moveCircle")) {
+//                    if(this )
+                    server.sendInfoPosition(this, this.nameTeam, inputLine[1], inputLine[2], inputLine[3]);
                 }
             }
 
@@ -55,6 +53,26 @@ public class ClientThread implements Runnable {
         }
     }
 
+    private void addOrDeleteReady(String string) throws IOException {
+        if (string.equals("ready")) {
+            server.addReadyClients(this);
+            server.sendInfoAboutReadyPlayer();
+
+        } else if (string.equals("notReady")) {
+            server.removeReadyClients(this);
+            server.sendInfoAboutReadyPlayer();
+        } else {
+            server.sendInfoAboutReadyPlayer();
+        }
+    }
+
+    public void setNameTeam(String nameTeam) {
+        this.nameTeam = nameTeam;
+    }
+
+    public String getNameTeam() {
+        return nameTeam;
+    }
 
     public BufferedReader getInput() {
         return input;

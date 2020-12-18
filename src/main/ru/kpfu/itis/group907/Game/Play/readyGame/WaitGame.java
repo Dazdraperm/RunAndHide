@@ -48,7 +48,7 @@ public class WaitGame {
     private boolean checkClient = true;
     private int checkLoad = 0;
 
-    int[] time = {5}; //Чтобы внутри события был доступен, делаем в виде массива.
+    int[] time = {2}; //Чтобы внутри события был доступен, делаем в виде массива.
 
     private int second = 0;
 
@@ -98,7 +98,6 @@ public class WaitGame {
             };
 
             while (checkLoad <= 0) {
-                System.out.println("sda");
                 try {
                     Thread.sleep(500);
                 } catch (InterruptedException e) {
@@ -160,6 +159,7 @@ public class WaitGame {
 
                 loader.setController(game);
                 Pane mainPane = loader.load();
+                client.setGame(game);
 
                 Scene scene = new Scene(mainPane, 1000, 720);
                 Stage stage = new Stage();

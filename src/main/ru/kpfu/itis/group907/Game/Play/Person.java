@@ -6,6 +6,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import kpfu.itis.group907.Game.Server.udp.Client.Client;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,16 @@ public class Person {
     private Bounds bounds;
     private Rectangle myVisionRectangle;
     private Rectangle playerOnThisBlock;
+
+    public void setClient(Client client) {
+        this.client = client;
+        if (client != null) {
+            client.sendMessage("moveCircle " + client.getName() + " " + this.getLayoutX() + " " + this.getLayoutY());
+        }
+    }
+
     private ArrayList<Rectangle> allRectangle;
+    private Client client;
 
     //    Блоки которые должен видеть пользователь
     private ArrayList<Rectangle> playerVisionBlocks = new ArrayList<>();
@@ -33,6 +43,7 @@ public class Person {
         this.bounds = myCircle.getBoundsInParent();
         this.myVisionRectangle = myVisionRectangle;
         this.allRectangle = allRectangle;
+
     }
 
     private boolean checkCollision(String side) {
@@ -149,6 +160,11 @@ public class Person {
 
 
             }
+        }
+        this.layoutX = myCircle.getLayoutX();
+        this.layoutY = myCircle.getLayoutY();
+        if (client != null) {
+            client.sendMessage("moveCircle " + client.getName() + " " + this.getLayoutX() + " " + this.getLayoutY());
         }
 
     }

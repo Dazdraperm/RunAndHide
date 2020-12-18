@@ -2,11 +2,14 @@ package kpfu.itis.group907.Game.Server.udp.Client;
 
 //import kpfu.itis.group907.Game.Server.udp.Server.ClientThread;
 
+import kpfu.itis.group907.Game.Play.Game;
 import kpfu.itis.group907.Game.Play.readyGame.WaitGame;
 
 import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Client {
 
@@ -16,15 +19,24 @@ public class Client {
     private String countReady;
     ClientThread clientThread;
     private WaitGame waitGame;
+    private Game game;
+
+    public ArrayList<String> getInfoPlayer() {
+        return infoPlayer;
+    }
+
+    public void setInfoPlayer(ArrayList<String> infoPlayer) {
+        this.infoPlayer = infoPlayer;
+    }
+
+    private ArrayList<String> infoPlayer = new ArrayList<>();
+
 
     public Client(String name, WaitGame waitGame) throws IOException {
         this.name = name;
         this.waitGame = waitGame;
     }
 
-    public String getCountReady() {
-        return countReady;
-    }
 
     public void start() throws IOException {
         String host = "localhost";
@@ -38,19 +50,13 @@ public class Client {
         BufferedWriter output = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8));
         BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
 
-//        System.out.println(input.readLine());
 
         clientThread = new ClientThread(input, output, this);
+
+        //Запускается поток, принимающий инофрмацию с сервера
         new Thread(clientThread).start();
     }
 
-    public void setCountReady(String countReady) {
-        this.countReady = countReady;
-    }
-
-    public WaitGame getWaitGame() {
-        return waitGame;
-    }
 
     public void sendMessage(String message) {
         try {
@@ -59,6 +65,25 @@ public class Client {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /* SETTER AND GETTER */
+    public void setCountReady(String countReady) {
+        this.countReady = countReady;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+        game.setClient(this);
+    }
+
+
+    public WaitGame getWaitGame() {
+        return waitGame;
+    }
+
+    public String getCountReady() {
+        return countReady;
     }
 
 
