@@ -114,19 +114,20 @@
                        stroke="#111017" strokeType="INSIDE" width="40.0"/>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#111017" height="40.0" layoutX="530.0" layoutY="289.0"
                        stroke="#111017" strokeType="INSIDE" width="40.0"/>
-
             <Circle fx:id="myCircle" fill="DODGERBLUE" layoutX="550.0" layoutY="389.0" radius="14.0" stroke="BLACK"
                     strokeType="INSIDE"/>
-            <Circle fx:id="enemyCircle1" fill="#ff251f" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
+            <Circle fx:id="blueCircle1" fill="DODGERBLUE" layoutX="550.0" layoutY="389.0" radius="14.0" stroke="BLACK"
                     strokeType="INSIDE"/>
-            <Circle fx:id="allyCircle" fill="DODGERBLUE" layoutX="550.0" layoutY="389.0" radius="14.0" stroke="BLACK"
+            <Circle fx:id="blueCircle2" fill="DODGERBLUE" layoutX="212.0" layoutY="261.0" radius="14.0" stroke="BLACK"
                     strokeType="INSIDE"/>
-            <Circle fx:id="enemyCircle2" fill="#ff251f" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
+            <Circle fx:id="greenCircle1" fill="green" layoutX="550.0" layoutY="389.0" radius="14.0" stroke="BLACK"
                     strokeType="INSIDE"/>
-            <Circle fx:id="notAllyCircle1" fill="DODGERBLUE" layoutX="550.0" layoutY="389.0" radius="14.0"
+            <Circle fx:id="greenCircle2" fill="green" layoutX="212.0" layoutY="261.0" radius="14.0" stroke="BLACK"
+                    strokeType="INSIDE"/>
+            <Circle fx:id="redCircle1" fill="red" layoutX="550.0" layoutY="389.0" radius="20.0"
                     stroke="BLACK"
                     strokeType="INSIDE"/>
-            <Circle fx:id="notAllyCircle2" fill="#ff251f" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
+            <Circle fx:id="redCircle2" fill="red" layoutX="212.0" layoutY="261.0" radius="20.0" stroke="BLACK"
                     strokeType="INSIDE"/>
             <Rectangle fx:id="myVisionRectangle" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0"
                        layoutX="475.0" layoutY="314.0" width="150.0"/>

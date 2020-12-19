@@ -10,6 +10,8 @@ import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class Client {
 
@@ -21,15 +23,48 @@ public class Client {
     private WaitGame waitGame;
     private Game game;
 
-    public ArrayList<String> getInfoPlayer() {
-        return infoPlayer;
+    //    myCircle;
+    ArrayList<String> blueCircle1 = new ArrayList<>();
+    ArrayList<String> blueCircle2 = new ArrayList<>();
+
+    ArrayList<String> greenCircle1 = new ArrayList<>();
+    ArrayList<String> greenCircle2 = new ArrayList<>();
+    ArrayList<String> redCircle1 = new ArrayList<>();
+    ArrayList<String> redCircle2 = new ArrayList<>();
+    private String color = "";
+
+
+    private HashMap<String, ArrayList<String>> blueTeam = new HashMap<>();
+    private HashMap<String, ArrayList<String>> greenTeam = new HashMap<>();
+    private HashMap<String, ArrayList<String>> redTeam = new HashMap<>();
+
+    public String getColor() {
+        return color;
     }
 
-    public void setInfoPlayer(ArrayList<String> infoPlayer) {
-        this.infoPlayer = infoPlayer;
+    public void addBlueTeam(String name, ArrayList<String> informationPlayer) {
+        blueTeam.put(name, informationPlayer);
+        if (this.name.equals(name)) {
+            this.color = "BLUE";
+        }
     }
 
-    private ArrayList<String> infoPlayer = new ArrayList<>();
+    public void addGreenTeam(String name, ArrayList<String> informationPlayer) {
+        greenTeam.put(name, informationPlayer);
+        if (this.name.equals(name)) {
+            this.color = "GREEN";
+        }
+    }
+
+    public void addRedTeam(String name, ArrayList<String> informationPlayer) {
+        redTeam.put(name, informationPlayer);
+        if (this.name.equals(name)) {
+            this.color = "RED";
+        }
+    }
+
+
+    private String infoPlayer = "";
 
 
     public Client(String name, WaitGame waitGame) throws IOException {
@@ -77,6 +112,37 @@ public class Client {
         game.setClient(this);
     }
 
+    public ArrayList<String> getBlueCircle1() {
+        return blueCircle1;
+    }
+
+    public ArrayList<String> getBlueCircle2() {
+        return blueCircle2;
+    }
+
+    public ArrayList<String> getGreenCircle1() {
+        return greenCircle1;
+    }
+
+    public ArrayList<String> getGreenCircle2() {
+        return greenCircle2;
+    }
+
+    public ArrayList<String> getRedCircle1() {
+        return redCircle1;
+    }
+
+    public ArrayList<String> getRedCircle2() {
+        return redCircle2;
+    }
+
+    public String getInfoPlayer() {
+        return infoPlayer;
+    }
+
+    public void setInfoPlayer(String infoPlayer) {
+        this.infoPlayer = infoPlayer;
+    }
 
     public WaitGame getWaitGame() {
         return waitGame;
@@ -86,8 +152,44 @@ public class Client {
         return countReady;
     }
 
+    public HashMap<String, ArrayList<String>> getBlueTeam() {
+        return blueTeam;
+    }
+
+    public void setBlueCircle1(ArrayList<String> blueCircle1) {
+        this.blueCircle1 = blueCircle1;
+    }
+
+    public void setBlueCircle2(ArrayList<String> blueCircle2) {
+        this.blueCircle2 = blueCircle2;
+    }
+
+    public void setGreenCircle1(ArrayList<String> greenCircle1) {
+        this.greenCircle1 = greenCircle1;
+    }
+
+    public void setGreenCircle2(ArrayList<String> greenCircle2) {
+        this.greenCircle2 = greenCircle2;
+    }
+
+    public void setRedCircle1(ArrayList<String> redCircle1) {
+        this.redCircle1 = redCircle1;
+    }
+
+    public void setRedCircle2(ArrayList<String> redCircle2) {
+        this.redCircle2 = redCircle2;
+    }
+
+    public HashMap<String, ArrayList<String>> getGreenTeam() {
+        return greenTeam;
+    }
+
+    public HashMap<String, ArrayList<String>> getRedTeam() {
+        return redTeam;
+    }
 
     public String getName() {
         return name;
     }
+
 }

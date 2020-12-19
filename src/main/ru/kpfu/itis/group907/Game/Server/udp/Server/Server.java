@@ -8,6 +8,7 @@ import java.net.Socket;
 import java.net.SocketException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Server {
@@ -20,9 +21,40 @@ public class Server {
     private HashSet<ClientThread> blueTeam = new HashSet<>();
     private HashSet<ClientThread> greenTeam = new HashSet<>();
 
+    private HashMap<String, String> players = new HashMap<>();
+
+    public void addPlayers(String name, String nameTeam,
+                           String LayoutX, String LayoutY,
+                           String MinX, String MinY,
+                           String MinZ, String Width,
+                           String Height, String Depth) throws IOException {
+        this.players.put(name, " position " + nameTeam + " " + LayoutX + " " + LayoutY + " "
+                + MinX + " " + MinY
+                + " " + MinZ + " "
+                + Width + " " + Height
+                + " " + Depth);
+        if (this.players.size() == serverSize) {
+            sendInfoPosition();
+        }
+    }
+
+    public void changePlayers(String name, String nameTeam,
+                              String LayoutX, String LayoutY,
+                              String MinX, String MinY,
+                              String MinZ, String Width,
+                              String Height, String Depth) throws IOException {
+        this.players.put(name, " position " + nameTeam + " " + LayoutX + " " + LayoutY + " "
+                + MinX + " " + MinY
+                + " " + MinZ + " "
+                + Width + " " + Height
+                + " " + Depth);
+//        if (this.players.size() == serverSize) {
+        sendInfoPosition();
+//        }
+    }
 
     private HashSet<ClientThread> redTeam = new HashSet<>();
-    private final int serverSize = 2;
+    private final int serverSize = 1;
     ClientThread clientThread;
 
 
@@ -59,25 +91,39 @@ public class Server {
         }
     }
 
-    public void sendInfoPosition(ClientThread clientThread, String name, String nameTeam, String LayoutX, String LayoutY) throws IOException {
+    public void sendInfoPosition() throws IOException {
+
+//        String infoAboutPlayer = "position " + nameTeam + " " + LayoutX + " " + LayoutY + " "
+//                + MinX + " " + MinY
+//                + " " + MinZ + " "
+//                + Width + " " + Height
+//                + " " + Depth + "\n";
+//
+//        players.put(name, infoAboutPlayer);
+
         for (ClientThread client : clients) {
-            if (client != clientThread) {
-                if (client.getNameTeam().equals(nameTeam)) {
 
-                    client.getOutput().write("position " + nameTeam + " " + name + " ally " + LayoutX + " " + LayoutY + "\n");
+//            if (client != clientThread) {
 
-                } else if (!client.getNameTeam().equals(nameTeam) && !client.getNameTeam().equals("RED")) {
-                    client.getOutput().write("position " + nameTeam + " " + name + " notAlly " + LayoutX + " " + LayoutY + "\n");
 
-                } else {
+//                if (client.getNameTeam().equals(nameTeam)) {
+//
+//                      infoAboutPlayer += "ally ";
+//
+//
+//                } else if (!client.getNameTeam().equals(nameTeam) && !client.getNameTeam().equals("RED")) {
+//            System.out.println(players.toString());
+            client.getOutput().write(players.toString() + "\n");
+            client.getOutput().flush();
+//                } else {
+//
+//                    client.getOutput().write("position RED " + name + " enemy "
+//                            + infoAboutPlayer + "\n");
 
-                    client.getOutput().write("position RED " + name + " enemy " + LayoutX + " " + LayoutY + "\n");
-
-                }
-
-                client.getOutput().flush();
-            }
         }
+
+//            }
+//        }
     }
 
 

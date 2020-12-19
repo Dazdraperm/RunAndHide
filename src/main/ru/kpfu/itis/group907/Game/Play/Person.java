@@ -15,14 +15,13 @@ public class Person {
     private Double layoutX;
     private Double layoutY;
     private Bounds bounds;
+    private String infoAboutPlayer;
     private Rectangle myVisionRectangle;
     private Rectangle playerOnThisBlock;
 
     public void setClient(Client client) {
         this.client = client;
-        if (client != null) {
-            client.sendMessage("moveCircle " + client.getName() + " " + this.getLayoutX() + " " + this.getLayoutY());
-        }
+        sendMessageToServer("createCircle");
     }
 
     private ArrayList<Rectangle> allRectangle;
@@ -163,10 +162,21 @@ public class Person {
         }
         this.layoutX = myCircle.getLayoutX();
         this.layoutY = myCircle.getLayoutY();
-        if (client != null) {
-            client.sendMessage("moveCircle " + client.getName() + " " + this.getLayoutX() + " " + this.getLayoutY());
-        }
+        sendMessageToServer("moveCircle");
 
+    }
+
+    private void sendMessageToServer(String whatDo) {
+        if (client != null) {
+            client.sendMessage(whatDo + " " + client.getName() + " " +
+                    myCircle.getLayoutX() + " " + myCircle.getLayoutY() + " " +
+                    myCircle.getBoundsInParent().getMinX() + " " +
+                    myCircle.getBoundsInParent().getMinY() + " " +
+                    myCircle.getBoundsInParent().getMinZ() + " " +
+                    myCircle.getBoundsInParent().getWidth() + " " +
+                    myCircle.getBoundsInParent().getHeight() + " " +
+                    myCircle.getBoundsInParent().getDepth());
+        }
     }
 
     //  Проверяются все блоки, которые будет видеть пользователь и записываются в playerVisionBlocks, которые не видить, тоже записываются но playerNotVisionBlocks

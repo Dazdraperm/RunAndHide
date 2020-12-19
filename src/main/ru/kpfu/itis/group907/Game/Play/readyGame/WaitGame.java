@@ -148,7 +148,6 @@ public class WaitGame {
 
     public void loadNewScene() {
         if (checkLoad <= 0) {
-            System.out.println(checkLoad);
 
             buttonReady.getScene().getWindow().hide();
             checkLoad++;

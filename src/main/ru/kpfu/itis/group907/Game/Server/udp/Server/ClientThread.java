@@ -38,10 +38,17 @@ public class ClientThread implements Runnable {
                 }
                 if (inputLine[0].equals("moveCircle")) {
 //                    if(this )
-                    server.sendInfoPosition(this, this.nameTeam, inputLine[1], inputLine[2], inputLine[3]);
+                    server.changePlayers(inputLine[1], this.nameTeam, inputLine[2], inputLine[3], inputLine[4], inputLine[5], inputLine[6], inputLine[7], inputLine[8], inputLine[9]);
+                }
+                if (inputLine[0].equals("createCircle")) {
+
+                    server.addPlayers(inputLine[1], this.nameTeam, inputLine[2], inputLine[3], inputLine[4], inputLine[5], inputLine[6], inputLine[7], inputLine[8], inputLine[9]);
+
                 }
             }
 
+        } catch (SocketException e) {
+            server.removeClient(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
