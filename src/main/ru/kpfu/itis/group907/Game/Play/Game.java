@@ -64,8 +64,11 @@ public class Game {
     @FXML
     private AnchorPane a;
     String infoAboutPlayers = "";
+    ArrayList<Circle> circles = new ArrayList<>();
+
 
     private HashMap<String, ArrayList<String>> players = new HashMap<>();
+    ArrayList<Rectangle> visionBlocks = new ArrayList<>();
 
     //    Основной метод
     @FXML
@@ -77,16 +80,18 @@ public class Game {
         setAllRectangle();
 //        paintInBlackAllRectangle();
         setSpawnCoordinate();
+
         person = new Person(myCircle, myVisionRectangle, allRectangle);
-        ArrayList<Rectangle> allRectangle = person.getAllRectangle();
+
+
+
         threadSearchChangeOnMap();
         threadSearchChangeOnMapAlways();
+
         myCircle.sceneProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 person.workWhenMoveCircle();
-//                Rectangle rectangle = new Rectangle();
-//                allRectangle.forEach(e -> System.out.println(e.intersects(rectangle.getBoundsInParent())));
-//                if(rectangle.intersects())
+
             }
         }));
 
@@ -118,10 +123,15 @@ public class Game {
                     myCircle.setFill(Color.GREEN);
 //                    greenCircle1 = myCircle;
                 }
+                circles = new ArrayList<>();
+                circles.add(blueCircle1);
+                circles.add(blueCircle2);
+                circles.add(greenCircle1);
+                circles.add(greenCircle2);
+                circles.add(redCircle1);
+                circles.add(redCircle2);
 
-//                    setPlayers = false;
-//                }
-//                blueCircle1.setLayoutX((double) client.getBlueTeam().entrySet());
+//                checkVisionOtherCircle();
 
             };
             while (i < 5) {
@@ -141,12 +151,14 @@ public class Game {
 
     private void wasd() {
 
+
         if (client.getGreenCircle1().size() > 0 && client.getGreenCircle2().size() > 0) {
             greenCircle1.setLayoutX(Double.parseDouble(client.getGreenCircle1().get(0)));
             greenCircle1.setLayoutY(Double.parseDouble(client.getGreenCircle1().get(1)));
             greenCircle2.setLayoutX(Double.parseDouble(client.getGreenCircle2().get(0)));
             greenCircle2.setLayoutY(Double.parseDouble(client.getGreenCircle2().get(1)));
-
+//            greenCircle1.setVisible(true);
+//            greenCircle2.setVisible(true);
         }
         if (client.getBlueCircle1().size() > 0 && client.getBlueCircle2().size() > 0) {
 
@@ -154,6 +166,8 @@ public class Game {
             blueCircle1.setLayoutY(Double.parseDouble(client.getBlueCircle1().get(1)));
             blueCircle2.setLayoutX(Double.parseDouble(client.getBlueCircle2().get(0)));
             blueCircle2.setLayoutY(Double.parseDouble(client.getBlueCircle2().get(1)));
+//            blueCircle1.setVisible(true);
+//            blueCircle2.setVisible(true);
         }
 
         if (client.getRedCircle1().size() > 0 && client.getRedCircle2().size() > 0) {
@@ -161,19 +175,44 @@ public class Game {
             redCircle1.setLayoutY(Double.parseDouble(client.getRedCircle1().get(1)));
             redCircle2.setLayoutX(Double.parseDouble(client.getRedCircle2().get(0)));
             redCircle2.setLayoutY(Double.parseDouble(client.getRedCircle2().get(1)));
-
+//            redCircle1.setVisible(true);
+//            redCircle2.setVisible(true);
         }
+//        checkVisionOtherCircle();
     }
+
+//    private void checkVisionOtherCircle() {
+//        visionBlocks = person.getPlayerVisionBlocks();
+//        System.out.println(circles);
+//
+//        for (int j = 0; j < circles.size(); j++) {
+//            if (!circles.get(i).getFill().toString().equals(myCircle.getFill().toString())) {
+//                for (Rectangle visionBlock : visionBlocks) {
+//                    circles.get(i).setVisible(false);
+//                }
+//            }
+//            else {
+//                circles.get(i).setVisible(true);
+//            }
+//        }
+//    }
 
     private void threadSearchChangeOnMapAlways() {
         Thread thread2 = new Thread(() -> {
             Runnable updater = () -> {
-
+                circles = new ArrayList<>();
+                circles.add(blueCircle1);
+                circles.add(blueCircle2);
+                circles.add(greenCircle1);
+                circles.add(greenCircle2);
+                circles.add(redCircle1);
+                circles.add(redCircle2);
 //                infoAboutPlayers = client.getInfoPlayer();
 //                System.out.println(client.getRedTeam() + " " + client.getBlueTeam() + " " + client.getGreenTeam());
 //                if (setPlayers){
 //                    System.out.println(client.getBlueTeam() + " " + client.getGreenTeam());
                 wasd();
+
 
 //                    setPlayers = false;
 //                }

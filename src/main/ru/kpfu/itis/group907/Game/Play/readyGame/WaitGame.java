@@ -48,7 +48,7 @@ public class WaitGame {
     private boolean checkClient = true;
     private int checkLoad = 0;
 
-    int[] time = {2}; //Чтобы внутри события был доступен, делаем в виде массива.
+    int[] time = {5}; //Чтобы внутри события был доступен, делаем в виде массива.
 
     private int second = 0;
 

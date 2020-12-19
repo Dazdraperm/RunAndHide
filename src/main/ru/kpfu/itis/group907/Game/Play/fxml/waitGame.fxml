@@ -27,7 +27,7 @@
                         <Font name="System Italic" size="14.0"/>
                     </font>
                 </Label>
-                <Label fx:id="countReady" layoutX="147.0" layoutY="152.0" text="0/6"/>
+                <Label fx:id="countReady" layoutX="147.0" layoutY="152.0" text="0/4"/>
                 <Label layoutX="80.0" layoutY="130.0" text="Никнейм:">
                     <font>
                         <Font name="System Italic" size="14.0"/>

@@ -160,6 +160,7 @@ public class Person {
 
             }
         }
+
         this.layoutX = myCircle.getLayoutX();
         this.layoutY = myCircle.getLayoutY();
         sendMessageToServer("moveCircle");

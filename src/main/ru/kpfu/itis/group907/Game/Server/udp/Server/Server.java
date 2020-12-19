@@ -54,7 +54,7 @@ public class Server {
     }
 
     private HashSet<ClientThread> redTeam = new HashSet<>();
-    private final int serverSize = 1;
+    private final int serverSize = 4;
     ClientThread clientThread;
 
 
